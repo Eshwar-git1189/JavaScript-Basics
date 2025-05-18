@@ -4,11 +4,11 @@
 //code shold be readable
 //console.log(3+3) // console.log is a browser function
 
-let firstName = "Esh" //string
-let age = 22 //number
-let isLoggedIn = false //boolean
+let firstName = "Esh"; //string
+let age = 22; //number
+let isLoggedIn = false; //boolean
 let state; //undefined
-let nullVariable = null //null
+let nullVariable = null; //null
 
 // number => 2to power 53
 // BigInt => 2to power 53
