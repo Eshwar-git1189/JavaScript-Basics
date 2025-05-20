@@ -1,7 +1,6 @@
 //Dates
 
-// 
-
+//
 
 let myCreatedDate = new Date(2025, 0, 1); // year, month, day
 //console.log(myCreatedDate.toDateString());
@@ -11,7 +10,6 @@ let myCreatedDate2 = new Date("2025-01-01");
 
 let myCreatedDate3 = new Date(2025, 0, 1, 20, 30, 0); // year, month, day, hours, minutes, seconds
 //console.log(myCreatedDate3.toLocaleString());
-
 
 let myTimeStamp = Date.now();
 //console.log(myTimeStamp);
@@ -35,18 +33,39 @@ let newDate = new Date();
 // console.log(newDate.getMinutes());
 // console.log(newDate.getSeconds());
 
-`${newDate.getFullYear()}-${newDate.getMonth()+1}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`;
- console.log(`${newDate.getFullYear()}-${newDate.getMonth()+1}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`);
+`${newDate.getFullYear()}-${
+  newDate.getMonth() + 1
+}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`;
+console.log(
+  `${newDate.getFullYear()}-${
+    newDate.getMonth() + 1
+  }-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
+);
 
- //console.log(newDate.toLocaleString());
- 
+//console.log(newDate.toLocaleString());
 
-newDate.toLocaleString('default', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'});
+newDate.toLocaleString("default", {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+});
 
- console.log(newDate.toLocaleString('default', {weekday: 'long',
-    timeZone: 'UTC',
-    timeZoneName: 'short',
-     year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'}));
+console.log(
+  newDate.toLocaleString("default", {
+    weekday: "long",
+    timeZone: "UTC",
+    timeZoneName: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+);
 
 console.log(newDate.getTimezoneOffset());
-
