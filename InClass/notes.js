@@ -44,10 +44,29 @@ console.log("C");
 // B
 
 // Call Back function
+// A callback function is a function passed into another function as an argument.
+// The receiving function can then execute the callback at a later time.
+// This allows for asynchronous behavior, where a function can continue executing while waiting for another function to complete.
+// Example of a callback function in JavaScript:
+// js
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = "Data fetched!";
+    callback(data);
+  }, 2000); // Simulating a delay of 2 seconds
+}
+fetchData((data) => {
+  console.log(data); // Output: Data fetched!
+});
+// Callbacks are often used in asynchronous programming to handle events or responses.
 
+// Callbacks can lead to "callback hell" if not managed properly, making code harder to read and maintain.
+// To avoid this, developers often use Promises or async/await syntax.
+// Callbacks are often used in asynchronous programming to handle events or responses.
 // 2) Promises in Js
 //     A Promise represents a value which may be available now,later or never.
-value = 9;
+
+
 const promise = new Promise(function (resolve, reject) {
   // Do something
   if ("Order Delivered") {
