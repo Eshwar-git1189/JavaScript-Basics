@@ -1,6 +1,10 @@
 // ⚛️ What is React?
 // React is a JavaScript library used for building user interfaces (UIs), especially single-page applications (SPAs). It was developed by Facebook and is now maintained by Meta and an open-source community.
-
+// React ia a open source JavaScript library for building user interfaces. 
+// 
+// It allows developers to create reusable UI components and manage the state of those components efficiently.
+//  React is often used for building single-page applications (SPAs) where the user interacts with the application without needing to reload the entire page.
+//  It uses a virtual DOM to optimize rendering and improve performance, making it suitable for complex and dynamic UIs.
 //
 // ⚛️ Why React?
 // React is popular because it allows developers to create dynamic and interactive UIs efficiently. It uses a component-based architecture, which means you can build encapsulated components that manage their own state and then compose them to create complex UIs. This modularity makes code easier to maintain and reuse.
@@ -50,3 +54,152 @@
 // 6. **Cross-Platform Development**: React Native allows developers to build mobile applications using React, enabling code sharing between web and mobile platforms.
 // 7. **Rich Ecosystem**: React has a rich ecosystem of libraries and tools that enhance its capabilities, making it suitable for various use cases.
 DOM :https://www.w3schools.com/js/pic_htmltree.gif
+
+
+Components in React
+// Components are the building blocks of React applications. They are reusable pieces of code that define how a certain part of the UI should look and behave.
+// Components can be functional or class-based:
+// 1. **Functional Components**: These are JavaScript functions that return JSX. They can accept props and manage their own state using hooks.
+// 2. **Class Components**: These are ES6 classes that extend the React.Component class. They can have lifecycle methods and manage their own state.
+//
+// Example of a Functional Component:
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import { useMemo } from 'react';
+import { useCallback } from 'react';
+import { useContext } from 'react';
+
+//Types of Components
+// 1. **Functional Components**: These are JavaScript functions that return JSX. They can accept props and manage their own state using hooks.
+// 2. **Class Components**: These are ES6 classes that extend the React.Component class. They can have lifecycle methods and manage their own state.
+// 3. **Pure Components**: These are components that only re-render when their props or state change. They can be created using the `React.PureComponent` class.
+// 4. **Higher-Order Components (HOCs)**: These are functions that take a component and return a new component with additional functionality.
+// 5. **Functional Components with Hooks**: These are functional components that use React hooks to manage state and lifecycle methods.
+// 6. **Presentational Components**: These are components that focus on how things look. They receive data and callbacks exclusively via props.
+// 7. **Container Components**: These are components that focus on how things work. They manage state and pass data to presentational components.
+// 8. **Controlled Components**: These are components that derive their state from props and notify changes via callbacks.
+// 9. **Uncontrolled Components**: These are components that manage their own state internally and do not rely on props for their state.
+// 10. **Memoized Components**: These are components that use the `React.memo` function to optimize rendering by preventing unnecessary re-renders.
+// 11. **Error Boundary Components**: These are components that catch JavaScript errors in their child components and display a fallback UI.
+// 12. **Fragment Components**: These are components that allow you to group multiple elements without adding extra nodes to the DOM.
+// 13. **Portal Components**: These are components that allow you to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+// 14. **Suspense Components**: These are components that allow you to "suspend" rendering while waiting for some asynchronous operation to complete.
+// 15. **Lazy-loaded Components**: These are components that are loaded asynchronously using `React.lazy()` and `Suspense`.
+// 16. **Custom Hooks**: These are functions that allow you to extract and reuse stateful logic across multiple components.
+// 17. **Context Components**: These are components that use the React Context API to share data between components without passing props down manually.
+
+
+Steps to create a React Router
+// 1. **Install React Router**: Use npm or yarn to install React Router in your project.
+// ```bash
+// npm install react-router-dom
+// ```
+// 2. **Import React Router Components**: Import the necessary components from `react-router-dom`.
+// ```javascript
+// import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+// ```
+// 3. **Wrap Your Application with Router**: Wrap your main application component with the `Router` component.
+// ```javascript
+ function App() {
+    return (
+     <Router>
+       <div>
+         {/* Your application components go here */}
+       </div>
+     </Router>
+   );
+ }
+// ```
+// 4. **Define Routes**: Use the `Route` component to define your routes. Each route should specify a `path` and a corresponding component.
+// ```javascript
+<Route path="/" exact component={Home} />
+<Route path="/about" component={About} />
+<Route path="/contact" component={Contact} />
+// ```
+// 5. **Use Switch for Exclusive Routing**: Wrap your routes in a `Switch` component to ensure that only one route is rendered at a time.
+// ```javascript
+<Switch>
+  <Route path="/" exact component={Home} />
+  <Route path="/about" component={About} />
+  <Route path="/contact" component={Contact} />
+  <Route component={NotFound} /> {/* Fallback route */}
+</Switch>
+// ```
+// ```
+// 6. **Create Navigation Links**: Use the `Link` component to create navigation links between different routes.
+// ```javascript
+<Link to="/">Home</Link>
+<Link to="/about">About</Link>
+<Link to="/contact">Contact</Link>
+// ```
+// 7. **Run Your Application**: Start your React application and navigate to different routes using the links you created.
+// ```bash
+npm start
+// ```
+// ```
+// 8. **Handle Route Parameters**: If you need to handle dynamic route parameters, you can define them in the route path using a colon.
+// ```javascript
+<Route path="/user/:id" component={UserProfile} />
+// ```
+// 9. **Access Route Parameters**: In the component rendered by the route, you can access the route parameters using the `useParams` hook.
+// ```javascript
+import { useParams } from 'react-router-dom';
+function UserProfile() {
+  const { id } = useParams();
+  return <div>User Profile ID: {id}</div>;
+}
+// ```
+// 10. **Nested Routes**: You can create nested routes by defining routes inside other components.
+// ```javascript
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+      <Switch>
+        <Route path="/dashboard/overview" component={Overview} />
+        <Route path="/dashboard/settings" component={Settings} />
+      </Switch>
+    </div>
+  );
+}
+// ```
+// 11. **Redirects**: You can use the `Redirect` component to redirect users from one route to another.
+// ```javascript
+import { Redirect } from 'react-router-dom';
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/old-route">
+          <Redirect to="/new-route" />
+        </Route>
+        <Route path="/new-route" component={NewRoute} />
+      </Switch>
+    </Router>
+  );
+}
+// ```
+// 12. **404 Not Found Page**: You can create a fallback route to display a 404 Not Found page for unmatched routes.
+
+
+
+Steps 
+npm install react-router-dom
+
+In index.js wrap the App component with BrowserRouter
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import './index.css';
+
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
+// import { BrowserRouter } from 'react-router-dom';  
+// import { StrictMode } from 'react';
+// import { createRoot } from 'react-dom/client';
+// import { useState } from 'react';
