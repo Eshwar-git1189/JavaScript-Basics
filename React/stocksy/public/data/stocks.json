@@ -1,0 +1,41 @@
+{
+  "tesla": {
+    "id": 1,
+    "name": "Tesla",
+    "description": "Electric vehicle company.",
+    "price": "200$",
+    "link": "/tesla"
+  },
+  "google": {
+    "id": 2,
+    "name": "Google",
+    "description": "Search engine giant.",
+    "price": "120$",
+    "link": "/google"
+  },
+  "ipo": {
+    "id": 3,
+    "name": "IPO",
+    "description": "Consumer electronics and software company.",
+    "price": "65$",
+    "link": "/ipo"
+  },
+  "sensux": {
+    "id": 5,
+    "name": "Sensux",
+    "description": "Software and technology company.",
+    "price": "60$",
+    "link": "/sensux"
+  },
+  "nifty": {
+    "id": 6,
+    "name": "Nifty",
+    "description": "Stock photography and video company.",
+    "price": "100$",
+    "link": "/nifty"
+  },
+  "market-events": [
+    { "title": "Budget Release", "date": "2025-06-01" },
+    { "title": "Fed Meeting", "date": "2025-06-10" }
+  ]
+}
