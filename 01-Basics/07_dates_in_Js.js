@@ -36,11 +36,11 @@ let newDate = new Date();
 `${newDate.getFullYear()}-${
   newDate.getMonth() + 1
 }-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`;
-console.log(
-  `${newDate.getFullYear()}-${
-    newDate.getMonth() + 1
-  }-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
-);
+// console.log(
+//   `${newDate.getFullYear()}-${
+//     newDate.getMonth() + 1
+//   }-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
+// );
 
 //console.log(newDate.toLocaleString());
 
@@ -54,18 +54,25 @@ newDate.toLocaleString("default", {
   second: "2-digit",
 });
 
-console.log(
-  newDate.toLocaleString("default", {
-    weekday: "long",
-    timeZone: "UTC",
-    timeZoneName: "short",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  })
-);
+// console.log(
+//   newDate.toLocaleString("default", {
+//     weekday: "long",
+//     timeZone: "UTC",
+//     timeZoneName: "short",
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     hour: "2-digit",
+//     minute: "2-digit",
+//     second: "2-digit",
+//   })
+// );
 
-console.log(newDate.getTimezoneOffset());
+//console.log(newDate.getTimezoneOffset());
+
+
+let mydate = new Date()
+console.log(mydate.toString());
+console.log(mydate.toDateString());
+console.log(mydate.toLocaleString());
+console.log(typeof mydate);
