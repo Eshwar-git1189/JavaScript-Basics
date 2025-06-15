@@ -1,6 +1,6 @@
 let score = true
 
-//console.log(typeof score); //number
+//console.log(typeof score); //boolean
 //console.log(typeof (score));
 
 let valueInteger = Number(score);
