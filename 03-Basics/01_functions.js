@@ -40,3 +40,67 @@ function logiUserMessage(username){
 console.log(logiUserMessage("Eshwar")); // This will log the message with the username
 
 console.log(logiUserMessage());
+
+
+function calculateCartPrice(...num1){
+  return num1
+
+}
+
+//console.log(calculateCartPrice(100)); // This will log 100 because the function returns the price
+
+//console.log(calculateCartPrice(200, 300, 400)); // This will log [200, 300, 400] because the function returns an array of prices
+
+
+function calculateCartPriceWithReturn(...num1){
+  let totalPrice = 0;
+  for(let i = 0; i < num1.length; i++) {
+    totalPrice += num1[i]; // This will add each price to the totalPrice
+  }
+  return totalPrice; // This will return the total price
+}
+
+
+function calculateCartPrice2(val1, val2, ...num1){
+  return num1
+}
+//console.log(calculateCartPrice2(100, 200, 300, 400)); // This will log [300, 400] because the first two values are not included in the rest parameter
+
+const user = {
+  username: "Eshwar",
+  price: 25
+};
+
+function handleObject(anyObject) {
+  console.log(anyObject.username); // This will log the username property of the object
+  console.log(anyObject.price); // This will log the price property of the object
+  console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`); // This will log a string with the username and price
+  
+}
+
+handleObject(user); // This will log the username and price of the user object
+
+function handleObjectwithReturn(anyObject) {
+  return `Username is ${anyObject.username} and price is ${anyObject.price}`; // This will return a string with the username and price
+}
+console.log(handleObjectwithReturn(user)); // This will return a string with the username and price
+
+
+handleObject({
+  username: "Esh",
+  price: 30
+}); // This will log the username and price of the object passed as an argument
+
+const myNewArray = [1, 2, 3, 4, 5];
+function handleArray(anyArray) {
+  console.log(anyArray); // This will log the entire array
+  console.log(anyArray[0]); // This will log the first element of the array
+  console.log(anyArray.length); // This will log the length of the array
+}
+
+handleArray(myNewArray); // This will log the entire array, the first element, and the length of the array
+function handleArrayWithReturn(anyArray) {
+  return anyArray[0]; // This will return the first element of the array
+}
+console.log(handleArrayWithReturn(myNewArray)); // This will log the first element of the array
+
