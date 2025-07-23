@@ -47,9 +47,9 @@ const JsUser = {
 
 
 JsUser.email = "jngv@nic.vig"
-//Object.freeze(JsUser)
+//Object.freeze(JsUser)// Prevents any changes to the object
 JsUser.email = "kkkdd33k"
-//console.log(JsUser);
+//console.log(JsUser);// Output: { name: 'Jane Doe', full name: 'Jane Doe Simon', age: 25, location: 'New York', email: 'kkkdd33k', isLoggedIn: true, lastLoginDays: [ 'Monday', 'Wednesday', 'Friday' ] }
 
 
 

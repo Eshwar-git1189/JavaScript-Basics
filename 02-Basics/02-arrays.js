@@ -34,7 +34,7 @@ const real_anotherArr = anotherArr.flat(Infinity);
 
 
 console.log(Array.isArray("Eshwar")); // false, checking if a string is an array
-console.log(Array.from("Eshwar"));
+console.log(Array.from("Eshwar"));// ["E", "s", "h", "w", "a", "r"], converting a string to an array
 console.log(Array.from({name: "Eshwar"})); // ["E", "s", "h", "w", "a", "r"], converting a string to an array // Interesting
 
 

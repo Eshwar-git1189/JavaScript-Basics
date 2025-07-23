@@ -16,25 +16,24 @@ const gameName = new String("Eshwar");
 // console.log(gameName.indexOf('s'));
 
 const newString = gameName.substring(2, 4);
-console.log(newString);
+console.log(newString); // Output: "hw"
 
-const anotherString = gameName.slice(-4, 4);
-console.log(anotherString);
+const anotherString = gameName.slice(-4, 4);// Using slice with negative index
+// console.log(anotherString); // Output: "Eshw" (slicing from the end)
+// console.log(gameName.slice(2, 4)); // Output: "hw" (slicing from the start)
+console.log(anotherString); // Output: "" (empty string, because end < start for positive index)
 
 const newString1 = "   Eshwar   ";
-console.log(newString1);
-console.log(newString1.trim());
+console.log(newString1); // Output: "   Eshwar   "
+console.log(newString1.trim()); // Output: "Eshwar" trim(): removes whitespace from both ends
 
 const url = "https://eshwar.com/eshwar%20ks";
 
-console.log(url.replace("%20", "-"));
+console.log(url.replace("%20", "-")); // Output: "https://eshwar.com/eshwar-ks"
 
-console.log(url.includes("eshwar"));
+console.log(url.includes("eshwar")); // Output: true
 
-console.log(url.split("/"));
-
-
-
+console.log(url.split("/")); // Output: [ 'https:', '', 'eshwar.com', 'eshwar-ks' ]
 
 // const gameName = new String('Eshwar')
 // gameName

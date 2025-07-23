@@ -1,11 +1,11 @@
 //const tinderUser = new Object()
-const tinderUser = {};
+const tinderUser = {};// Creating an empty object
 
-tinderUser.id = "123abc";
+tinderUser.id = "123abc";// Adding properties to the object
 tinderUser.name = "Sammy";
 tinderUser.isLoggedIn = false;
 
-// console.log(tinderUser);
+// console.log(tinderUser);// Output: { id: '123abc', name: 'Sammy', isLoggedIn: false }
 
 const regularUser = {
   email: "come@gmail.com",
@@ -33,7 +33,7 @@ const obj2 = { 3: "a", 4: "b" };
 // console.log(obj1);
 
 const obj3 = { ...obj1, ...obj2 }; // spread operation
-// console.log(obj3);
+// console.log(obj3);// Output: { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
 
 const users = [
   {

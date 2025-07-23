@@ -32,28 +32,25 @@ const myFunction = function () {
 //console.log(typeof myFunction); // Object Function
 //console.log(typeof anotherid);
 
-
-// *************** 
+// ***************
 
 // Stack (Primitive), Heap (Non Primitive)
 
-let myYoutubename = "hitrshjnununv.com"
+let myYoutubename = "hitrshjnununv.com";
 
-let anothername = myYoutubename
-anothername = "Chi aur code "
+let anothername = myYoutubename;
+anothername = "Chi aur code ";
 
-console.log(anothername);
-console.log(myYoutubename);
-
+console.log(anothername); // Output: "Chi aur code "
+console.log(myYoutubename); // Output: "hitrshjnununv.com"
 
 let userOne = {
-    email :"user@google.com",
-    upi:"user@ybl"
-}
+  email: "user@google.com",
+  upi: "user@ybl",
+};
 
-let userTwo = userOne
+let userTwo = userOne;
 
-userTwo.email = "eshwar@gamil.com"
-console.log(userOne.email);
-console.log(userTwo.email);
-
+userTwo.email = "eshwar@gamil.com";
+console.log(userOne.email); // Output: "eshwar@gamil.com"
+console.log(userTwo.email); // Output: "eshwar@gamil.com"

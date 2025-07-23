@@ -5,11 +5,11 @@ https://www.w3schools.com/js/pic_htmltree.gif
 The Virtual DOM (V-DOM) is a lightweight copy of the real DOM (Document Object Model) used by libraries like React to optimize UI rendering.
 
 🔍 Real DOM vs Virtual DOM
-Feature	Real DOM	Virtual DOM
-What is it?	The actual UI in the browser	A JavaScript object copy of the DOM
-Speed	Slower to update (re-renders whole tree)	Much faster (calculates difference)
-Performance	Expensive to update directly	Efficient updates using diffing
-Used by	Browsers	Libraries like React, Vue
+Feature	                Real DOM	                                           Virtual DOM
+What is it?	    The actual UI in the browser	                    A JavaScript object copy of the DOM
+Speed	        Slower to update (re-renders whole tree)	        Much faster (calculates difference)
+Performance	    Expensive to update directly	                    Efficient updates using diffing
+Used by	        Browsers	                                        Libraries like React, Vue
 
 ⚙️ How Virtual DOM Works in React
 Initial Render:
