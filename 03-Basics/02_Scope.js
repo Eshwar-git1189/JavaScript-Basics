@@ -5,7 +5,7 @@ if(true) {
     let a = 40; // This 'a' is block-scoped
     const b = 50; // This 'b' is block-scoped
     //var c = 60; // This 'c' is function-scoped (or globally scoped if not in a function)
-    console.log(`Block:`,a); // 40 (block-scoped 'a')
+    //console.log(`Block:`,a); // 40 (block-scoped 'a')
 }
 
 
@@ -13,7 +13,7 @@ if(true) {
 //console.log(b); // ReferenceError: b is not defined
 //console.log(c); // 60 (c is accessible here because it is function-scoped or globally scoped)
 
-console.log(`Global:`,a);
+//console.log(`Global:`,a);
 
 //Global Scope in windows and in Node.js
 // In a browser, global variables become properties of the window object
@@ -68,3 +68,41 @@ Edit
 global.myVar = 42;
 console.log(global.myVar); // 42
 */
+
+//Nested Scope
+
+function one(){
+    const username = "Eshwar";
+
+    function two(){
+        const website = "Eshwar.com";
+        //console.log(username); // Accessing variable from outer function scope
+        
+    }
+    //console.log(website); // ReferenceError: website is not defined
+    two(); // Call the inner function to access its scope
+}
+one(); // Call the outer function to execute the code
+
+if(true) {
+    const username = "Eshwar";
+    if(username === "Eshwar") {
+        const website = " Eshwar.com";
+        //console.log(username + website); // Accessing variable from outer block scope
+    }
+    //console.log(website); // ReferenceError: website is not defined
+}
+//console.log(username); // ReferenceError: username is not defined
+
+// ++++++++++++++++ Interesting Example ++++++++++++++++
+
+console.log(addOne(5)); // 6 // Here the function is hoisted, so it can be called before its declaration
+function addOne(num){
+    return num + 1
+}
+
+addTwo(5); // 7 // Here the function is not hoisted, so it cannot be called before its declaration
+//console.log(addTwo(5)); // ReferenceError: Cannot access 'addTwo' before initialization
+const addTwo = function(num){  //Storing function in a variable // Also known as Function Expression
+    return num + 2
+}
