@@ -1,0 +1,148 @@
+Javascript execution context
+{} ---> Global execution context
+        and it is refered by this 
+
+Global execution context is different in browser and node.js
+
+✅ Global Execution Context in JavaScript
+In JavaScript, Execution Context is an environment where code is evaluated and executed. When any JavaScript program runs, the very first thing that happens is the creation of the Global Execution Context (GEC).
+
+🧠 What is Global Execution Context?
+It is the default context in which JavaScript code starts executing. This happens when:
+
+Your script first runs in the browser or Node.js.
+
+There’s no function running (i.e., you're not inside any function).
+
+
+
+
+🔁 Phases of Global Execution Context
+The creation of the GEC happens in two phases:
+
+1. Creation Phase
+Creates the Global Object
+
+In the browser: window
+
+In Node.js: global
+
+Creates the this object
+
+Points to the global object (e.g., this === window in browsers).
+
+Sets up memory space (Hoisting)
+
+Allocates memory for:
+
+Variables → initialized as undefined
+
+Functions → hoisted entirely (definition + body)
+
+
+2. Execution Phase
+The actual code is executed line-by-line.
+Variables are assigned actual values.
+Functions are invoked.
+
+
+
+🧪 Example:
+
+console.log(x); // undefined (hoisted)
+var x = 10;
+
+function greet() {
+  console.log("Hello");
+}
+greet(); // "Hello"
+
+
+🌐 Behind the Scenes:
+Creation Phase:
+
+
+Memory:
+x -> undefined
+greet -> function definition
+
+
+
+
+Execution Phase:
+
+console.log(x); // prints undefined
+x = 10
+greet(); // prints "Hello"
+
+
+
+📌 Key Points:
+Only one Global Execution Context is created per program.
+
+It is the base of the Call Stack.
+
+Other contexts (like function execution contexts) sit on top of it.
+
+
+
+
+
+✅ JavaScript Execution Context – Full Explanation
+The Execution Context is the environment in which JavaScript code is evaluated and executed. It contains everything JavaScript needs to run code: variables, functions, the value of this, and scope.
+
+🧠 Types of Execution Contexts
+Global Execution Context (GEC)
+
+Created when the JavaScript file starts executing.
+
+There is only one GEC per program.
+
+Variables/functions declared outside any function live here.
+
+Function Execution Context (FEC)
+
+Created whenever a function is invoked.
+
+A new execution context is made each time a function runs.
+
+Eval Execution Context (rare)
+
+Created by running code inside the eval() function.
+
+🔁 Execution Context Lifecycle
+Each execution context goes through two phases:
+
+1. Creation Phase
+Creates the Variable Object (VO)
+
+Memory is allocated for:
+
+Variables → initialized as undefined
+
+Function declarations → hoisted with full definitions
+
+Creates the Scope Chain
+
+Links the current context to its outer (parent) context
+
+Determines the value of this
+
+In GEC: this = window (in browser)
+
+In FEC: depends on how the function is called
+
+2. Execution Phase
+Actual execution of code
+
+Variables are assigned real values
+
+Functions are invoked
+
+🧱 Structure of an Execution Context
+Each context has 3 key components:
+
+Part	Description
+Variable Object (VO)	Stores function arguments, inner variable declarations
+Scope Chain	For variable access – current scope + outer scopes
+this	Refers to the object that is executing the current function
