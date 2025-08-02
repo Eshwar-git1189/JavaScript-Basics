@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | editing and removing DOM elements</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //Approch 1
+    function addLang(lang){
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addLang("python")//It has to traverse all the elements when method is called.
+    addLang("java")
+    // javascript
+    // python
+    // java
+    
+
+    //Approch 2- optimized
+    //So now optimizing
+    function addOptimizedLang(lang){
+        const li = document.createElement("li")//created a list li element
+        li.appendChild(document.createTextNode(lang))//li appended by a text by creating a TextNode
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimizedLang('golang')
+    // javascript
+    // python
+    // java
+    // golang
+
+    //Edit
+    const secondlang = document.querySelector("li:nth-child(2)")
+    console.log(secondlang);
+    
+    //secondlang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondlang.replaceWith(newli)
+    // javascript
+    // Mojo
+    // java
+    // golang
+    
+    //Edit 2 - Replace javascript with typescript
+    const firstlang = document.querySelector("li:first-child")
+    const newli2 = document.createElement('li')
+    newli2.textContent = "Typescript"
+    firstlang.replaceWith(newli2)
+    // Typescript
+    // Mojo
+    // java
+    // golang
+
+    //remove -let's remove golang
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove();
+    // javascript
+    // Mojo
+    // java
+</script>
+</html>
