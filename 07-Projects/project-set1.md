@@ -42,8 +42,10 @@ boxes.forEach(function (button){
 })
 
 ```
-# Solution code
+
+
 ## project 2 - BMI Calculator
+# Solution code
 ```javascript
 const form = document.querySelector('form')
 // const height = parseInt(document.querySelector('#height').value)
@@ -81,4 +83,19 @@ form.addEventListener('submit', function(e){
 
 });
 
+```
+## project 3 - Digital Clock
+# Solution code
+```javascript
+// const clock = document.querySelector('#clock')
+const clock = document.getElementById('clock')
+let date = new Date()
+console.log(date.toLocaleTimeString())
+
+//To show a running time we can use a event in js - setInterval()
+setInterval(function(){
+  let date = new Date()
+  //console.log(date.toLocaleTimeString())
+  clock.innerHTML = date.toLocaleTimeString()
+}, 1000)
 ```
