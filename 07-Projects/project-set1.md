@@ -4,9 +4,9 @@
 
 [Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-3fsot1uo?file=2-BMICalculator%2Findex.html)
 
-# Solution code
+# project 1 - Color Changer
 
-## project 1 - Color Changer
+## Solution code
 
 ```javascript
 const boxes = document.querySelectorAll(".button");
@@ -43,9 +43,9 @@ boxes.forEach(function (button) {
 });
 ```
 
-## project 2 - BMI Calculator
+# project 2 - BMI Calculator
 
-# Solution code
+## Solution code
 
 ```javascript
 const form = document.querySelector("form");
@@ -82,9 +82,9 @@ form.addEventListener("submit", function (e) {
 });
 ```
 
-## project 3 - Digital Clock
+# project 3 - Digital Clock
 
-# Solution code
+## Solution code
 
 ```javascript
 // const clock = document.querySelector('#clock')
@@ -100,9 +100,9 @@ setInterval(function () {
 }, 1000);
 ```
 
-## project 4 - Guess the number
+# project 4 - Guess the number
 
-# Solution code
+## Solution code
 
 ```javascript
 let random = parseInt(Math.random() * 100 + 1);
@@ -192,4 +192,64 @@ function endGame() {
   playGame = false;
   newGame();
 }
+```
+
+# project 5 - Unlimited Colors
+
+## Solution code
+
+```javascript
+const newColor = function () {
+  const hex = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+console.log(newColor());
+let intervalsetter;
+const startInterval = function () {
+  if (!intervalsetter) {
+    intervalsetter = setInterval(backgroundChanger, 1000);
+  }
+};
+const stopInterval = function () {
+  clearInterval(intervalsetter);
+  intervalsetter = null;
+  document.body.style.backgroundColor = "#0f0f0f";
+};
+const backgroundChanger = function () {
+  document.body.style.backgroundColor = newColor();
+};
+
+document.querySelector("#start").addEventListener("click", startInterval);
+document.querySelector("#stop").addEventListener("click", stopInterval);
+```
+
+# project 6 - keyboard
+
+## Solution code
+
+```javascript
+const insert = document.getElementById("insert");
+
+window.addEventListener("keydown", (e) => {
+  insert.innerHTML = `
+    <div class='color'>
+      <table>
+        <tr>
+          <th>Key</th>
+          <th>KeyCode</th>
+          <th>Code</th>
+        </tr>
+        <tr>
+          <td>${e.key === " " ? "Space" : e.key}</td>
+          <td>${e.keyCode}</td>
+          <td>${e.code}</td>
+        </tr>
+      </table>
+    </div>
+    `;
+});
 ```
