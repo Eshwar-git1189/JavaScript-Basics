@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Wisdom Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .card {
+        max-width: 400px;
+        width: 90%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .advice-text {
+        min-height: 100px;
+      }
+      #generateBtn {
+        background: linear-gradient(145deg, #4c51bf, #667eea);
+        transition: background-color 0.2s, transform 0.1s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      #generateBtn:hover {
+        background: linear-gradient(145deg, #3c429e, #5a67d8);
+        transform: translateY(-1px);
+      }
+      #generateBtn:active {
+        transform: translateY(1px);
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">
+        Daily Wisdom Generator
+      </h1>
+
+      <!-- Advice ID -->
+      <p
+        class="text-sm font-semibold uppercase text-indigo-500 mb-4 tracking-wider"
+      >
+        Advice #<span id="advice-id">...</span>
+      </p>
+
+      <!-- Advice Text Area -->
+      <div class="advice-text flex items-center justify-center mb-8">
+        <p id="advice-text" class="text-xl text-gray-700 italic">
+          Click the button below to get some daily wisdom!
+        </p>
+      </div>
+
+      <!-- Horizontal separator with a small circle -->
+      <div class="flex items-center mb-8">
+        <div class="flex-grow border-t border-gray-300"></div>
+        <span class="w-2 h-2 bg-gray-400 rounded-full mx-2"></span>
+        <div class="flex-grow border-t border-gray-300"></div>
+      </div>
+
+      <!-- Generate Button -->
+      <button
+        id="generateBtn"
+        class="text-white font-semibold py-3 px-8 rounded-full focus:outline-none focus:ring-4 focus:ring-indigo-300"
+      >
+        Generate New Advice
+      </button>
+
+      <!-- Error Message Display -->
+      <p id="error-message" class="text-red-500 mt-4 text-sm hidden">
+        Could not fetch advice. Please check your connection.
+      </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () =>{
+            const adviceID = document.getElementById('advice-id');
+            const adviceText = document.getElementById('advice-text');
+            const btn = document.getElementById('generateBtn');
+            const errorMessage = document.getElementById('error-message');
+            
+            //API
+            const api_url = 'https://api.adviceslip.com/advice';
+
+            //Core functionality of fetching the advice from API
+            const fetchAdvice = async ()=>{
+                adviceText.textContent = 'Loading...';
+                btn.disabled = true;
+
+                //Exception Handling for API responses
+                try{
+                    const response = await fetch(api_url);
+                    if(!response.ok){
+                        throw new Error('HTTP error ' + response.status);
+                    }
+                    const data = await response.json();
+                    const {id,advice} = data.slip;
+
+                    adviceID.textContent = id;
+                    adviceText.textContent = advice;
+
+                    
+                }
+                catch(error){
+                    console.log('Error fetching advice:', error);
+                    adviceText.textContent = 'Error loading advice.';
+                }
+                finally{
+                    btn.disabled = false;
+                }  
+            };
+            btn.addEventListener('click', fetchAdvice);
+            fetchAdvice();
+        });
+    </script>
+  </body>
+</html>
